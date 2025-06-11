@@ -2486,7 +2486,6 @@ SOKOL_API_IMPL void simgui_setup(const simgui_desc_t* desc) {
     pip_desc.index_type = SG_INDEXTYPE_UINT16;
     pip_desc.sample_count = _simgui.desc.sample_count;
     pip_desc.depth.pixel_format = _simgui.desc.depth_format;
-    std::cout << "Pixel depth format: " << (uint32_t)pip_desc.depth.pixel_format << "\n";
     pip_desc.colors[0].pixel_format = _simgui.desc.color_format;
     pip_desc.colors[0].write_mask = _simgui.desc.write_alpha_channel ? SG_COLORMASK_RGBA : SG_COLORMASK_RGB;
     pip_desc.colors[0].blend.enabled = true;
