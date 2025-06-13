@@ -15537,9 +15537,19 @@ _SOKOL_PRIVATE WGPUBufferUsage _sg_wgpu_buffer_usage(const sg_buffer_usage* usg)
     if (usg->storage_buffer) {
         res |= WGPUBufferUsage_Storage;
     }
-    if (!usg->immutable) {
+
+    if (!usg->immutable)
+    {
         res |= WGPUBufferUsage_CopyDst;
     }
+    else
+    {
+        if (usg->storage_buffer)
+        {
+            res |= WGPUBufferUsage_CopySrc | WGPUBufferUsage_CopyDst;
+        }
+    }
+
     return (WGPUBufferUsage)res;
 }
 
