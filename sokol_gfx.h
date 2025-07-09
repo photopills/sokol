@@ -9163,6 +9163,8 @@ _SOKOL_PRIVATE void _sg_gl_init_caps_gles3(void) {
                 has_float_blend = true;
             } else if (strstr(ext, "_texture_filter_anisotropic")) {
                 _sg.gl.ext_anisotropic = true;
+            } else if (strstr(ext, "GL_EXT_shader_multisample_interpolation")) {
+                _sg.features.msaa_image_bindings = true;
             }
         }
     }
